@@ -30,9 +30,8 @@ function initMap() {
         geocodeAddress(geocoder, address); // Uses geocoder, map objects to do coordinate conversion                       
         event.preventDefault();
     })
-    $('#location-form').on('submit', function (event) {
+    $('#location-form').on('click', function (event) {
         var address = $("#search").val().trim();
-        alert("here")
         $("#search").val("");
         geocodeAddress(geocoder, address); // Uses geocoder, map objects to do coordinate conversion                       
         event.preventDefault();
