@@ -31,7 +31,7 @@ function initMap() {
         event.preventDefault();
     })
     $('#location-form').on('submit', function (event) {
-        var address = $("#search").val().trim();
+        var address = $("#search").val();
         $("#search").val("");
         geocodeAddress(geocoder, address); // Uses geocoder, map objects to do coordinate conversion                       
         event.preventDefault();
