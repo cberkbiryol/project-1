@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Sunblocker</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+
+    <!-- CSS  -->
+    <!-- Materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- Vex -->
+    <script src="js/vex.combined.min.js"></script>
+    <script>vex.defaultOptions.className = 'vex-theme-flat-attack'</script>
+    <link rel="stylesheet" href="css/vex.css" />
+    <link rel="stylesheet" href="css/vex-theme-flat-attack.css" />
+    <!-- Custom -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Sunblocker</a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a id="location-2" href="#">Current Location</a>
+                </li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav black-text">
+                <li>
+                    <a id="location" href="#">Current Location</a>
+                </li>
+                <li>
+                    <form id="location-form">
+                        <div class="input-field">
+                            <i class="material-icons prefix">add_location</i>
+                            <input id="search" type="tel" class="validate" name="location">
+                            <label for="search">Change Location</label>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+
+            <form id="location-form-2" class="right hide-on-med-and-down">
+                <div class="input-field">
+                    <input id="search-2" type="search" placeholder="Change Location" required>
+                    <label class="label-icon" for="search">
+                        <i class="material-icons">add_location</i>
+                    </label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card teal center">
+                <div class="card-content white-text">
+                    <span class="card-title">Current UV Index</span>
+                    <hr>
+                    <br>
+                    <div class="imageContainer valign-wrapper">
+                        <span id="uvIndex" class="imgOverlay center-align"></span>
+                        <img class="responsive-img" src="images/sun.png" alt="Sun">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card teal center">
+                <div class="card-content white-text">
+                    <span id="apply" class="card-title">You need to apply sunscreen!</span>
+                    <div class="clock"></div>
+                    <div class="sunscreen" id="sun">
+                        <a class="waves-effect purple btn">Apply Sunscreen Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card teal center">
+                <div class="card-content white-text">
+                    <span class="card-title">3 Day UV Forecast</span>
+                    <table class="centered highlight">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th id="day1">Today</th>
+                                <th id="day2">Tomorrow</th>
+                                <th id="day3">Day after Tomorrow</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th>UV Index</th>
+                                <td id="day1uv">UV</td>
+                                <td id="day2uv">UV</td>
+                                <td id="day3uv">UV</td>
+                            </tr>
+                            <tr>
+                                <th>Time of day</th>
+                                <td id="day1uvTime"></td>
+                                <td id="day2uvTime"></td>
+                                <td id="day3uvTime"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer orange">
+        <div class="container">
+            <div class="row">
+                <div class="col l12 s12">
+                    <h5 class="white-text">Why is the UV Index important?</h5>
+                    <p class="grey-text text-lighten-4">The purpose of the UV Index is to help people effectively protect themselves from UV radiation, which
+                        has health benefits in moderation but in excess causes sunburn, skin aging, DNA damage, skin cancer,
+                        immunosuppression, and eye damage such as cataracts. Public health organizations recommend that people protect themselves (for
+                        example, by applying sunscreen to the skin and wearing a hat and sunglasses) if they spend substantial
+                        time outdoors when the UV Index is 3 or higher.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                Made by
+                <a class="orange-text text-lighten-3" href="https://github.com/Mister-Pink">Mister-Pink</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="js/sun.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR3qcLr-2o-JdTPfU0kldROrF7P9xVARU&callback=initMap"></script>
+
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!-- Moment -->
+
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="js/materialize.js"></script>
+
+    <script src="js/init.js"></script>
+    <script src="js/flipclock.min.js"></script>
+
+</body>
+
+</html>
